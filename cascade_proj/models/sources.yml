@@ -1,0 +1,28 @@
+version: 2
+sources:
+  - name: cascade
+    schema: dev
+    tables:
+      - name: src_europe
+        identifier: seed_europe
+
+      - name: src_africa
+        identifier: seed_africa
+
+      - name: src_asia
+        identifier: seed_asia
+
+      - name: src_atlantic
+        identifier: seed_atlantic
+
+      - name: src_australia
+        identifier: seed_australia
+
+      - name: src_indian
+        identifier: seed_indian
+        
+      - name: src_america
+        identifier: seed_america
+
+      - name: src_pacific
+        identifier: seed_pacific
