@@ -1,0 +1,10 @@
+dbt init cascade_proj
+1 -- for snowflakwe
+
+jmcnzuy-tc47535
+
+dbtc --user
+1
+dbtPassword123
+transform --role
+COMPUTE_WH --Warehouse
