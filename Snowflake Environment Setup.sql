@@ -29,6 +29,7 @@ GRANT ROLE transform to USER dbt;
 -- Create our database and schemas
 CREATE DATABASE IF NOT EXISTS CASCADE;
 CREATE SCHEMA IF NOT EXISTS CASCADE.RAW;
+CREATE SCHEMA IF NOT EXISTS CASCADE.PROD;
 
 -- Set up permissions to role `transform`
 GRANT ALL ON WAREHOUSE COMPUTE_WH TO ROLE transform; 
