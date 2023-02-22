@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: agent
+    description: Table that contains agent names
+    columns: 
+
+      - name: agent_id
+        description: Primary Key for the agent table
+
+      - name: agent_name
+        description: Substring that refers to agent name
+
+      - name: agent_surname
+        description: Substring that refers to agent name
+
+  - name: location
+    description: Uses report and sightin locations to have a unified location list
+    columns:
+      - name: loaction_id
+        description: Primary Key for the location table
+
+  - name: report
+    description: '{{ doc("doc_report") }}'
+    columns:
+      - name: report_id
+        description: Primary Key for the report table
+      
+      - name: sighting_id
+        description: Foreign Key that links this table to the sighting table
+
+      - name: source
+        description: This refers to the region where the sighting was reported
+
+  - name: sighting
+    description: Contains each sighting and all the attributes related to this concept.
+    columns:
+      - name: sighting_id
+        description: Primary Key for the sighting table
+
+      - name: witness_id
+        description: Foreign Key that links this table to the witness table 
+
+      - name: location_id
+        description: Foreign Key that links this table to the location table            

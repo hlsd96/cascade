@@ -60,10 +60,30 @@ The following lineage graph represents the materalization of the data model that
 
 
 ##### Solutions
+For the 4th step of this assessment, I created 4 separate views in a different schema (`dev_mart`) and the corresponding models can be found in `cascade/cascade_proj/models/mart/`.
+All my solutions contain some sort of aggregations as required by the nature of the four questions, the also involve case statements to address multiple scenarios (which could probably be implemented by pivoting tables as an alternative). 
+
+As it is shown in the dbt models, all four views reference the sighting or the report models because of the way the data model was designed, this model facilitates the join of both tables and provides a convenient way to ingest data.
+
 a. For each month, which agency region is Carmen Sandiego most likely to be found?
 
+[![results_q1](https://github.com/hlsd96/cascade/blob/cbd70acdb159f2a60fb047d860cca8234636ef9d/graphic_resources/q1_table.png "results_q1")](https://github.com/hlsd96/cascade/blob/cbd70acdb159f2a60fb047d860cca8234636ef9d/graphic_resources/q1_table.png "results_q1")
+
+Based on the results provided by this view it is possible to compare the probabilities fore each moth and each region as shown below: 
+
+[![results_q1b](https://github.com/hlsd96/cascade/blob/cbd70acdb159f2a60fb047d860cca8234636ef9d/graphic_resources/q1_result.png "results_q1b")](https://github.com/hlsd96/cascade/blob/cbd70acdb159f2a60fb047d860cca8234636ef9d/graphic_resources/q1_result.png "results_q1b")
+
+b. Also for each month, what is the probability that Ms. Sandiego is armed AND wearing a jacket, but NOT a hat? What general observations about Ms. Sandiego can you make from this?
+
+[![results_q2](https://github.com/hlsd96/cascade/blob/17b78d39d5d2a03b2645e16f9021d8c9c3c75920/graphic_resources/answer_q2.png "results_q2")](https://github.com/hlsd96/cascade/blob/17b78d39d5d2a03b2645e16f9021d8c9c3c75920/graphic_resources/answer_q2.png "results_q2")
+
+c. What are the three most occuring behaviors of Ms. Sandiego?
+
+[![answer_q3](https://github.com/hlsd96/cascade/blob/17b78d39d5d2a03b2645e16f9021d8c9c3c75920/graphic_resources/answer_question_three.png "answer_q3")](https://github.com/hlsd96/cascade/blob/17b78d39d5d2a03b2645e16f9021d8c9c3c75920/graphic_resources/answer_question_three.png "answer_q3")
 
 
+d. For each month, what is the probability Ms. Sandiego exhibits one of her three most occurring behaviors?
 
+[![answer_q4](https://github.com/hlsd96/cascade/blob/17b78d39d5d2a03b2645e16f9021d8c9c3c75920/graphic_resources/answer_question_four.png)](https://github.com/hlsd96/cascade/blob/17b78d39d5d2a03b2645e16f9021d8c9c3c75920/graphic_resources/answer_question_four.png)
 
 ###End
