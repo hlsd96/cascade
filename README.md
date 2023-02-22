@@ -25,35 +25,26 @@ It is also important to set up an environment where all the objects and data are
 Now that the corresponding CSV files are stored in the seeds folder, it is possible to develop initial models to map and standardize column names that are received from the source. 
 Please note that the seed sources are referenced as **sources** and a `sources.yml `file was created for that purpose:
 
-[![](https://github.com/hlsd96/cascade/blob/50b89cb6c3d456783ca3964fa11ea05688babfb4/graphic_resources/sources.png)](https://github.com/hlsd96/cascade/blob/50b89cb6c3d456783ca3964fa11ea05688babfb4/graphic_resources/sources.png)
+[![sources.yml](https://github.com/hlsd96/cascade/blob/50b89cb6c3d456783ca3964fa11ea05688babfb4/graphic_resources/sources.png)](https://github.com/hlsd96/cascade/blob/50b89cb6c3d456783ca3964fa11ea05688babfb4/graphic_resources/sources.png)
 
 One model was created for each reagion and these modeles can be found in `cascade/cascade_proj/models/src/`
 Since no configuration was given to these models, they are created as views by default with the use of CTEs. 
 
 
+### 3. CREATION OF DATA MODEL
+---
+The process that was followed to create a model for this scenario is based on the identification of individual entities that represent concepts in the game. The fact that this model needs to be > 1NF is also taken into account.
 
-##Headers (Underline)
+The following is the data model that was designed for this scenario:
 
-H1 Header (Underline)
-=============
+[![data_model](https://github.com/hlsd96/cascade/blob/31de8ff819fd88940c9aa5dd573050a81c107ad1/graphic_resources/ERD.png)](https://github.com/hlsd96/cascade/blob/31de8ff819fd88940c9aa5dd573050a81c107ad1/graphic_resources/ERD.png)
 
-H2 Header (Underline)
--------------
+The models that were created to populate the above entities can be found in `cascade/cascade_proj/models/prod/` 
 
-###Characters
-                
-----
+Main considerations: 
 
-~~Strikethrough~~ <s>Strikethrough (when enable html tag decode.)</s>
-*Italic*      _Italic_
-**Emphasis**  __Emphasis__
-***Emphasis Italic*** ___Emphasis Italic___
-
-Superscript: X<sub>2</sub>，Subscript: O<sup>2</sup>
-
-**Abbreviation(link HTML abbr tag)**
-
-The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
+- The source does not have unique identifiers for reports or sightings and for this reason IDs were fabricated with the help of `dbt-labs/dbt_utils` (this package is invoked in `packages.yml`)
+- T
 
 ###Blockquotes
 
